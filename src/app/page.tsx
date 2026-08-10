@@ -16,7 +16,7 @@ import {
 import { formatBalance } from '@/lib/utils'
 import { STREAM_DEFAULTS } from '@/lib/constants'
 
-export default function DripsDashboard() {
+export default function Dashboard() {
   const { wallet, isReady } = useWallet()
   const streams = useStreamStore((state) => state.streams)
   const addStream = useStreamStore((state) => state.addStream)
@@ -139,10 +139,10 @@ export default function DripsDashboard() {
       <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-sm sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="text-3xl">🌊</div>
+            <div className="text-3xl">⚡</div>
             <div>
-              <h1 className="text-2xl font-bold text-gradient">Drips Wave Protocol</h1>
-              <p className="text-xs text-slate-400">Real-time streaming on Stellar Soroban</p>
+              <h1 className="text-2xl font-bold text-gradient">Web3 Streaming UI</h1>
+              <p className="text-xs text-slate-400">Real-time transactions & updates</p>
             </div>
           </div>
 
@@ -259,7 +259,7 @@ export default function DripsDashboard() {
                 onClick={() => openModal('create')}
                 className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold py-3 px-8 rounded-xl transition-all active:scale-95 shadow-lg shadow-cyan-500/25"
               >
-                ✨ Create New Stream
+                ✨ Create New Transaction
               </button>
             </div>
           </>
@@ -270,7 +270,7 @@ export default function DripsDashboard() {
       <Modal
         isOpen={isModalOpen && modalType === 'create'}
         onClose={closeModal}
-        title="Create New Stream"
+        title="Create New Transaction"
         size="lg"
       >
         <StreamForm

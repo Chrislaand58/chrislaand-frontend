@@ -15,11 +15,11 @@ A production-ready Web3 frontend for real-time token streaming on Stellar Soroba
 
 ### Key Features Implemented
 
-#### 1. Real-Time Balance Ticker ⚡
+#### 1. Real-Time Calculations ⚡
 - **20 FPS smooth updates** (50ms intervals)
-- **7 decimal precision** for accurate XLM amounts
-- **Client-side interpolation** between ledger updates
-- **Custom React hook** `useStreamBalance` for reusable calculations
+- **Configurable precision** for flexible use cases
+- **Client-side computation** between ledger updates
+- **Custom React hook** `useStreamBalance` for reusable logic
 
 #### 2. Wallet Integration 🔐
 - **Freighter Wallet support** - native Stellar wallet
@@ -27,12 +27,12 @@ A production-ready Web3 frontend for real-time token streaming on Stellar Soroba
 - **Automatic wallet detection** on page load
 - **React Context provider** for global wallet state
 
-#### 3. Stream Management 💧
-- **Create streams** with recipient, rate (XLM/sec or /month), and duration
-- **View incoming/outgoing** streams separately
-- **One-click withdrawal** to claim accrued tokens
-- **Real-time balance display** with smooth animations
-- **Form validation** for Stellar addresses and amounts
+#### 3. Transaction Management 💳
+- **Create transactions** with recipient and parameters
+- **View incoming/outgoing** operations separately
+- **One-click actions** to execute transactions
+- **Real-time display** with smooth animations
+- **Form validation** for addresses and amounts
 
 #### 4. UI Components 🎨
 - **StreamCard**: Real-time balance display with actions

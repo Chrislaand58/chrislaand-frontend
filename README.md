@@ -1,24 +1,24 @@
-# Drips Wave Protocol - Frontend
+# Real-Time Streaming UI - Next.js 14 Web3 Frontend
 
-A high-precision, real-time streaming Web3 interface for continuous token transfers on Stellar Soroban using Next.js 14, Tailwind CSS, and Stellar SDK.
+A high-precision, real-time streaming Web3 interface for token transfers and on-chain interactions using Next.js 14, Tailwind CSS, and Stellar SDK. Fully customizable for various Web3 protocols and use cases.
 
 ## Features
 
-### 🌊 Real-Time Streaming
-- **20 FPS client-side ticker**: Smooth, sub-second balance updates using `requestAnimationFrame` interpolation
-- **7 decimal precision**: Display token balances down to millionths for accurate streaming rates
-- **Live network status**: Ledger sequence monitoring and RPC health checks
+### ⚡ Real-Time Updates
+- **20 FPS client-side ticker**: Smooth, sub-second updates using `requestAnimationFrame` interpolation
+- **Configurable precision**: Display balances with customizable decimal places
+- **Network monitoring**: Ledger sequence tracking and RPC health checks
 
 ### 🔐 Wallet Integration
 - **Freighter Wallet**: Direct Stellar wallet connection
 - **WebAuthn/Passkey Support**: Biometric authentication via `@creabt/stellar-wallet-kit`
 - **Secure session management**: Automatic wallet reconnection on app load
 
-### 💧 Stream Management
-- **Create streams**: Set recipient, flow rate (XLM/sec or /month), and duration
-- **Track incoming/outgoing**: Separate views for received and sent streams
-- **One-click withdrawal**: Instantly claim accrued streaming tokens
-- **Form validation**: Client-side checks for Stellar addresses and amounts
+### 💳 Transaction Management
+- **Create transactions**: Send to addresses with configurable parameters
+- **Track operations**: Separate views for incoming and outgoing transactions
+- **One-click actions**: Instant transaction execution with confirmation
+- **Form validation**: Client-side validation for addresses and amounts
 
 ### 🎨 UI/UX
 - **Responsive design**: Mobile-first Tailwind CSS styling
@@ -184,16 +184,16 @@ Validates and submits new stream creation with flow rate conversion (XLM/month �
 
 **Note**: The WebAuthn implementation is set up to work with native browser APIs and can be extended to work with wallet providers that support Secp256r1 credentials.
 
-## Real-Time Balance Calculation
+## Real-Time Calculations
 
-The app calculates claimable balance client-side for smooth 20 FPS updates:
+The app performs client-side calculations for smooth 20 FPS updates:
 
 ```typescript
 // Updated every 50ms
-const claimable = baseBalance + (Date.now() / 1000 - lastUpdate) * ratePerSec
+const currentValue = calculateValue(baseValue, rate, timestamp)
 
-// Example: 100 XLM base + 0.0005 XLM/sec rate
-// After 1 minute: 100 + (60 * 0.0005) = 100.03 XLM
+// Example: Initial value + accumulated changes
+// Customizable for your specific use case
 ```
 
 ## Network Configuration
